@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 请在head中添加代码（生产上有https访问的，会导致上报的referer为空，移动运营商会去校验请求referer是否进行备案） -->
+    <meta content="always" name="referrer">
+    <script>
+      var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+        CSS.supports('top: constant(a)'))
+      document.write(
+        '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+        (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+    </script>
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>	
+		//阻止safari浏览器双击放大功能
+		let lastTouchEnd = 0 //更新手指弹起的时间
+		document.documentElement.addEventListener('touchstart', function (event) {
+			//多根手指同时按下屏幕，禁止默认行为
+			if (event.touches.length > 1) {
+				event.preventDefault();
+			}
+		});
+		document.documentElement.addEventListener('touchend', function (event) {
+			let now = (new Date()).getTime();
+			if (now - lastTouchEnd <= 300) {
+				//当两次手指弹起的时间小于300毫秒，认为双击屏幕行为
+				event.preventDefault();
+			} else { // 否则重新手指弹起的时间
+				lastTouchEnd = now;
+			}
+		}, false);
+		//阻止双指放大页面
+		document.documentElement.addEventListener('gesturestart', function (event) {
+			event.preventDefault();
+		});
+
+		// VConsole 默认会挂载到 `window.VConsole` 上
+		new window.VConsole();
+	</script>
+    <title>数字艺术档案</title>
+    <!--preload-links-->
+    <!--app-context-->
+  </head>
+  <body>
+    <div id="app"><!--app-html--></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

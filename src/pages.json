@@ -1,0 +1,162 @@
+{
+	"custom": {
+		"^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+		"^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+		"^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue"
+	},
+	"pages": [ // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+			{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},	
+		{
+			"path": "pages/notice/platformNotice",
+			"style": {
+				"navigationBarTitleText": "", // 平台公告
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/notice/noticeDetail",
+			"style": {
+				"navigationBarTitleText": "公告详情",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/login/appLogin",
+			"style": {
+				"navigationBarTitleText": "", // app一键登录
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/otherLogin",
+			"style": {
+				"navigationBarTitleText": "", // 验证码登录
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/getCode",
+			"style": {
+				"navigationBarTitleText": "", // 登录获取验证码
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/user/setUp",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/user/userInformation",
+			"style": {
+				"navigationBarTitleText": "个人资料",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/certification/certification",
+			"style": {
+				"navigationBarTitleText": "实名认证",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/certification/certificationSuccess",
+			"style": {
+				"navigationBarTitleText": "实名认证",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/user/updateUserInfo",
+			"style": {
+				"navigationBarBackgroundColor": "#F3F4F8",
+				"navigationBarTitleText": "修改昵称",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/user/operaPassword",
+			"style": {
+				"navigationBarTitleText": "设置操作密码",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/user/service",
+			"style": {
+				"navigationBarTitleText": "官方社群",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/user/aboutUs",
+			"style": {
+				"navigationBarTitleText": "关于我们",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/user/address",
+			"style": {
+				"navigationBarTitleText": "收货地址",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/user/protocol",
+			"style": {
+				"navigationBarBackgroundColor": "#F3F4F8",
+				"navigationBarTitleText": "", // 协议
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/myNft/myNft",
+			"style": {
+				"navigationBarTitleText": "藏品",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "pages_community",
+			"pages": [{
+				"path": "community/community",
+				"style": {
+					"navigationBarTitleText": "社区",
+					"enablePullDownRefresh": true,
+					"onReachBottomDistance": 50
+				}
+			}]
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "数字艺术档案",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
